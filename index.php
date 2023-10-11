@@ -1,4 +1,9 @@
-<?php include('header.php');?>
+<?php 
+session_start();
+if(isset($_SESSION['nama']) && !$_SESSION['nama']){
+  header('Location: login/?session=expired');
+}
+include('header.php');?>
    <body id="page-top">
       <nav class="navbar navbar-expand navbar-light bg-white static-top osahan-nav sticky-top">
          &nbsp;&nbsp; 
@@ -18,19 +23,47 @@
             </div>
          </form>
          <!-- Navbar -->
-        <?php include('navbar.php');?>
+        <?php include('navbar/navbar.php');?>
       <div id="wrapper">
          <!-- Sidebar -->
-         <?php include('sidebar.php');?>
+         <?php include('menu/sidebar.php');?>
          <div id="content-wrapper">
-           <?php include('content.php');?>
+           <?php
+           if(isset($_GET['page'])){
+            if($_GET['page']=='kategori' || $_GET['page']=='home'){
+                  include('content.php');
+               }
+            else if($_GET['page']=='upload-video'){
+               include('upload-video.php');
+            }
+            else if($_GET['page']=='history-video'){
+               include('history-video.php');
+            }
+            else if($_GET['page']=='single-channel'){
+               include('single-channel.php');
+            }
+            else if($_GET['page']=='channels'){
+               include('channels.php');
+            } 
+            else if($_GET['page']=='settings'){
+               include('settings.php');
+            }    
+               else{
+                  include('content.php');
+                  //include('content.php');
+               }
+            } 
+            else{
+               include('content.php');
+               //include('content.php');
+            }?>
             <!-- /.container-fluid -->
             <!-- Sticky Footer -->
             <footer class="sticky-footer">
                <div class="container">
                   <div class="row no-gutters">
                      <div class="col-lg-6 col-sm-6">
-                        <p class="mt-1 mb-0"><strong class="text-dark">Vidoe</strong>. 
+                        <p class="mt-1 mb-0"><strong class="text-dark">Video</strong>. 
                            <small class="mt-0 mb-0"><a class="text-primary" target="_blank" href="https://templatespoint.net/">TemplatesPoint</a>
                            </small>
                         </p>
@@ -65,7 +98,7 @@
                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                <div class="modal-footer">
                   <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                  <a class="btn btn-primary" href="login.html">Logout</a>
+                  <a class="btn btn-primary" href="login">Logout</a>
                </div>
             </div>
          </div>
