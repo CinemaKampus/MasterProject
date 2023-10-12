@@ -4,6 +4,10 @@ if(isset($_SESSION['nama']) && !$_SESSION['nama']){
   header('Location: login/?session=expired');
 }
 include('header.php');?>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+      
    <body id="page-top">
       <nav class="navbar navbar-expand navbar-light bg-white static-top osahan-nav sticky-top">
          &nbsp;&nbsp; 
@@ -45,6 +49,9 @@ include('header.php');?>
             else if($_GET['page']=='channels'){
                include('channels.php');
             } 
+            else if($_GET['page']=='categories'){
+               include('categories.php');
+            }
             else if($_GET['page']=='settings'){
                include('settings.php');
             }    
@@ -104,7 +111,7 @@ include('header.php');?>
          </div>
       </div>
       <!-- Bootstrap core JavaScript-->
-      <script src="vendor/jquery/jquery.min.js"></script>
+      <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
       <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
       <!-- Core plugin JavaScript-->
       <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
