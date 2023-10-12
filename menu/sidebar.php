@@ -6,7 +6,10 @@
       else if(isset($_SESSION['role']) && $_SESSION['role']=='uploader'){
         include('uploader.php');
       }
-      else{
+      else if(isset($_SESSION['role']) && $_SESSION['role']=='viewer'){
         include('viewer.php');
+      }
+      else{
+        include('guest.php');
       }
 ?>
