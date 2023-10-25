@@ -24,7 +24,7 @@
                </a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="upload-video.html">
+               <a class="nav-link" href="?page=upload-video">
                <i class="fas fa-fw fa-cloud-upload-alt"></i>
                <span>Upload Video</span>
                </a>

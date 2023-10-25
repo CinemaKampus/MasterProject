@@ -1,4 +1,11 @@
-      <div id="wrapper">
+     <?php
+     $query = mysqli_query($koneksi,"SELECT * FROM tb_user");
+     $view = mysqli_fetch_array($query);
+     ?>
+     <style>
+      input{color:red; background:red;}
+     </style>
+     <div id="wrapper">
          <!-- Sidebar -->
          
          <div id="content-wrapper">
@@ -15,13 +22,27 @@
                      <div class="col-sm-6">
                         <div class="form-group">
                            <label class="control-label">First Name <span class="required">*</span></label>
-                           <input class="form-control border-form-control" value="" placeholder="Gurdeep" type="text">
+                           <input style="color:green;" class="form-control border-form-control" value="<?php echo $view['nama'];?>" placeholder="Gurdeep" type="text">
                         </div>
                      </div>
                      <div class="col-sm-6">
                         <div class="form-group">
                            <label class="control-label">Last Name <span class="required">*</span></label>
-                           <input class="form-control border-form-control" value="" placeholder="Osahan" type="text">
+                           <input style="color:green;" class="form-control border-form-control" value="<?php echo $view['last_name'];?>" placeholder="Osahan" type="text">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="col-sm-6">
+                        <div class="form-group">
+                           <label class="control-label">Username <span class="required">*</span></label>
+                           <input style="color:green;" class="form-control border-form-control" value="<?php echo $view['username'];?>" placeholder="" type="text">
+                        </div>
+                     </div>
+                     <div class="col-sm-6">
+                        <div class="form-group">
+                           <label class="control-label">Password <span class="required">*</span></label>
+                           <input style="color:green;" class="form-control border-form-control " value="<?php echo $view['password'];?>" placeholder="" disabled="" type="email">
                         </div>
                      </div>
                   </div>
@@ -29,17 +50,17 @@
                      <div class="col-sm-6">
                         <div class="form-group">
                            <label class="control-label">Phone <span class="required">*</span></label>
-                           <input class="form-control border-form-control" value="" placeholder="123 456 7890" type="number">
+                           <input style="color:green;" class="form-control border-form-control" value="<?php echo $view['phone'];?>" placeholder="" type="number">
                         </div>
                      </div>
                      <div class="col-sm-6">
                         <div class="form-group">
                            <label class="control-label">Email Address <span class="required">*</span></label>
-                           <input class="form-control border-form-control " value="" placeholder="iamosahan@gmail.com" disabled="" type="email">
+                           <input style="color:green;" class="form-control border-form-control " value="<?php echo $view['email'];?>" placeholder="iamosahan@gmail.com" disabled="" type="email">
                         </div>
                      </div>
                   </div>
-                  <div class="row">
+                  <!-- <div class="row">
                      <div class="col-sm-6">
                         <div class="form-group">
                            <label class="control-label">Country <span class="required">*</span></label>
@@ -309,12 +330,12 @@
                            </select>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                   <div class="row">
                      <div class="col-sm-6">
                         <div class="form-group">
                            <label class="control-label">Zip Code <span class="required">*</span></label>
-                           <input class="form-control border-form-control" value="" placeholder="123456" type="number">
+                           <input style="color:green;" class="form-control border-form-control" value="<?php echo $view['zip_code'];?>" placeholder="123456" type="number">
                         </div>
                      </div>
                      <div class="col-sm-6">
@@ -334,13 +355,13 @@
                      <div class="col-sm-12">
                         <div class="form-group">
                            <label class="control-label">Address <span class="required">*</span></label>
-                           <textarea class="form-control border-form-control"></textarea>
+                           <textarea style="color:green;" class="form-control border-form-control"><?php echo $view['address'];?></textarea>
                         </div>
                      </div>
                   </div>
                   <div class="row">
                      <div class="col-sm-12 text-right">
-                        <button type="button" class="btn btn-danger border-none"> Cencel </button>
+                        <button type="button" class="btn btn-danger border-none"> Cancel </button>
                         <button type="button" class="btn btn-success border-none"> Save Changes </button>
                      </div>
                   </div>

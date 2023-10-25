@@ -3,6 +3,7 @@ session_start();
 if(isset($_SESSION['nama']) && !$_SESSION['nama']){
   header('Location: login/?session=expired');
 }
+include('conf/config.php');
 include('header.php');?>
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
   <script src="//cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
@@ -66,24 +67,7 @@ include('header.php');?>
             }?>
             <!-- /.container-fluid -->
             <!-- Sticky Footer -->
-            <footer class="sticky-footer">
-               <div class="container">
-                  <div class="row no-gutters">
-                     <div class="col-lg-6 col-sm-6">
-                        <p class="mt-1 mb-0"><strong class="text-dark">Video</strong>. 
-                           <small class="mt-0 mb-0"><a class="text-primary" target="_blank" href="https://templatespoint.net/">TemplatesPoint</a>
-                           </small>
-                        </p>
-                     </div>
-                     <div class="col-lg-6 col-sm-6 text-right">
-                        <div class="app">
-                           <a href="#"><img alt="" src="img/google.png"></a>
-                           <a href="#"><img alt="" src="img/apple.png"></a>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </footer>
+           <?php include('footer.php');?>
          </div>
          <!-- /.content-wrapper -->
       </div>

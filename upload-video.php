@@ -14,7 +14,7 @@
                      <div class="imgplace"></div>
                   </div>
                   <div class="col-lg-10">
-                     <div class="osahan-title">Contrary to popular belief, Lorem Ipsum (2019) is not.</div>
+                     <div class="osahan-title">Cinema Campus Upload Page Progress</div>
                      <div class="osahan-size">102.6 MB . 2:13 MIN Remaining</div>
                      <div class="osahan-progress">
                         <div class="progress">
@@ -35,7 +35,7 @@
                            <div class="col-lg-12">
                               <div class="form-group">
                                  <label for="e1">Video Title</label>
-                                 <input type="text" placeholder="Contrary to popular belief, Lorem Ipsum (2019) is not." id="e1" class="form-control">
+                                 <input type="text" placeholder="Type Link Youtube Here" id="e1" class="form-control">
                               </div>
                            </div>
                            <div class="col-lg-12">
@@ -270,7 +270,7 @@
                         </div>
                      </div>
                      <div class="osahan-area text-center mt-3">
-                        <button class="btn btn-outline-primary">Save Changes</button>
+                        <button class="btn btn-outline-primary">Save</button>
                      </div>
                      <hr>
                      <div class="terms text-center">

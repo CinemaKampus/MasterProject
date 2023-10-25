@@ -29,7 +29,7 @@
                      <div class="text-center mb-5 login-main-left-header pt-4">
                         <img src="../img/logo.png" class="img-fluid" alt="LOGO">
                         <h5 class="mt-3 mb-3">Selamat Datang Di Campus Cinema</h5>
-                        <p>It is a long established fact that a reader <br> will be distracted by the readable.</p>
+                        <p>Developed By<br>College Student & Lecturer STTI Sony Sugema</p>
                      </div>
                      <form action="../conf/auth.php" method='post'>
                         <div class="form-group">
