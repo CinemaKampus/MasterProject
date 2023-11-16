@@ -12,10 +12,10 @@
                               <p class="mb-0"><i class="fas fa-eye"></i> 2,729,347 views</p>
                            </div>
                            <div class="single-video-author box mb-3">
-                              <div class="float-right"><button class="btn btn-danger" type="button">Subscribe <strong>1.4M</strong></button> <button class="btn btn btn-outline-danger" type="button"><i class="fas fa-bell"></i></button></div>
+                              <div class="float-right"><button id='sub' class="btn btn-danger" type="button">Subscribe </button> <button class="btn btn btn-outline-danger" type="button"><i class="fas fa-bell"></i></button></div>
                               <img class="img-fluid" src="img/sttiss.png" alt="">
-                              <p><a href="#"><strong>Sekolah Tinggi Teknologi Informatika Sony Sugema</strong></a> <span title="" data-placement="top" data-toggle="tooltip" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></span></p>
-                              <small>Published on Aug 10, 2018</small>
+                              <p><a href="#"><strong>Sekolah Tinggi Teknologi Informatika Sony Sugema. </strong></a> <span title="" data-placement="top" data-toggle="tooltip" data-original-title="Verified"><i class="fas fa-check-circle text-success"></i></span> <h7><span id="rowCount">0</span></h7></p>
+                              <small>Published on Aug 10, 2018.</small>
                            </div>
                            <div class="single-video-info-content box mb-3">
                               <h6>Cast:</h6>
@@ -270,3 +270,43 @@
                   </div>
                </div>
             </div>
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <div id="result">Jumlah baris dalam tabel adalah: <span id="rowCount">0</span></div>
+
+    <script>
+        function updateRowCount() {
+            $.ajax({
+                url: 'hitung.php', // Ganti dengan nama file PHP yang akan Anda buat
+                method: 'POST', // Anda bisa menggunakan method POST atau GET sesuai kebutuhan
+                data: { tableName: 'tb_sub' }, // Ganti dengan nama tabel yang ingin Anda hitung
+                success: function(response) {
+                    $('#rowCount').text(response);
+                }
+            });
+        }
+
+        // Mulai pembaruan setiap 5 detik (5000 ms)
+        setInterval(updateRowCount, 1000); // Ganti interval sesuai kebutuhan (dalam milidetik)
+        
+        // Pertama kali, panggil fungsi pembaruan
+        updateRowCount();
+    </script>
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+               <script>
+               $(document).ready(function(){
+               $("#sub").click(function(){
+                  $(this).html('Subscribed');
+                  //sub = 1;
+                  console.log(100);
+                  $.ajax({
+                     type: "POST",
+                     url: "insert.php",
+                     //data: {sub:sub},
+                     success: function(data) {
+                        alert("sucess");
+                     }
+                  });
+               });
+               });
+               </script>
